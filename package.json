@@ -1,0 +1,27 @@
+{
+  "name": "lanote",
+  "version": "0.0.1",
+  "description": "Realtime notepad",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Taras Labiak <kissarat@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.16.1",
+    "mongoose": "^4.11.14"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kissarat/lanote.git"
+  },
+  "keywords": [
+    "notepad"
+  ],
+  "bugs": {
+    "url": "https://github.com/kissarat/lanote/issues"
+  },
+  "homepage": "https://github.com/kissarat/lanote#readme"
+}
