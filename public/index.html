@@ -5,12 +5,41 @@
     <title>Lanote</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css"
           integrity="sha256-lcqhJKENorK80v+ug14UGH5PFBhk9wMZ4tNQTq/IpFo=" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"
             integrity="sha256-IDf1DTXCXREKhmsRkKy9Xa4J1A99tyDSCC+8B042LJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"
             integrity="sha256-ThERFdU1Vgoe2IPCiF6KzfeybDK1orpSbAGwZ4ncZFg=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.7.0/vue-router.js"
+            integrity="sha256-6epALjJMgKqWvnqeinlOzwclF8Ox7TS1tkfD9vgyT8g=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/connect.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/note.js"></script>
+    <script src="/js/main.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            margin: auto;
+            max-width: 1024px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #page-login a {
+            float: right;
+        }
+    </style>
 </head>
 <body>
-
+<div id="app"></div>
 </body>
 </html>

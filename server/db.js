@@ -1,12 +1,23 @@
 const mg = require('mongoose')
+mg.connect('mongodb://localhost/lanote')
 
 const User = mg.Schema({
-  username: String,
-  password: String
+  username: {
+    type: String,
+    unique: true,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  }
 })
 
 const Note = mg.Schema({
-  text: String,
+  text: {
+    type: String,
+    required: true
+  },
   users: [{
     type: mg.Schema.Types.ObjectId,
     ref: 'user'
