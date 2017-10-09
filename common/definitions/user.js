@@ -1,7 +1,8 @@
 module.exports = {
+  type: 'object',
   properties: {
     nick: {
-      type: {$ref: '/nick'}
+      type: {$ref: '#/definitions/nick'}
     },
     email: {
       type: 'string',
