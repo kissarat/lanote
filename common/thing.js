@@ -19,6 +19,12 @@ module.exports = class Thing {
     return _.cloneDeep(this)
   }
 
+  // specify(...sources) {
+  //   const specified = new this.constructor(this.describe())
+  //   specified.assign(...sources)
+  //   return specified
+  // }
+
   toString() {
     return JSON.stringify(this.describe())
   }
