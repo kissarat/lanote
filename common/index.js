@@ -20,22 +20,29 @@ const parameters = [{
   format: 'int32'
 }]
 
-const produces = ['application/json']
+function body($ref) {
+  return {
+    in: 'body',
+    name: 'body',
+    required: true,
+    schema: {$ref}
+  }
+}
 
 for (const name in config.published) {
   if (config.published[name]) {
     const lower = name.toLowerCase()
     config.paths[`/list/${lower}`] = {
       operationId: lower + '.list',
-      get: {produces, summary: `${name} list`,
+      get: {summary: `${name} list`,
         responses: {
-          200: R.array('#/definitions/User', 'List')
+          200: R.array('#/definitions/' + name, 'List')
         }}
     }
     config.paths[`/${lower}`] = {
       post: {
         operationId: lower + '.create',
-        produces,
+        parameters: [body('#/definitions/' + name)],
         summary: `Create ${name}`, responses: {
           201: R.boolean('Created')
         }
@@ -45,8 +52,7 @@ for (const name in config.published) {
       get: {
         operationId: lower + '.get',
         summary: `Get ${name} by id`,
-        parameters,
-        produces,
+        parameters: parameters.concat(body('#/definitions/' + name)),
         responses: {
           200: R.single('#/definitions/User', 'Get ' + name)
         }
@@ -54,15 +60,13 @@ for (const name in config.published) {
       put: {
         operationId: lower + '.update',
         summary: `Update ${name}`,
-        parameters,
-        produces,
+        parameters: parameters.concat(body('#/definitions/' + name)),
         responses: {
           201: R.boolean('Updated')
         }
       },
       delete: {
         operationId: lower + '.delete',
-        produces,
         summary: `Delete ${name}`, parameters, responses: {
           201: R.boolean('Deleted')
         }

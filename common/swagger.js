@@ -10,6 +10,9 @@ module.exports = {
   },
   basePath: '/api',
   definitions,
+  schemes: ['http', 'https'],
+  consumes: ['application/json'],
+  produces: ['application/json'],
   paths: {
     '/': {
       get: {

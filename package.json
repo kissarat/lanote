@@ -22,10 +22,14 @@
     "npm": "^5.4.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "sequelize": "^4.13.8",
     "socket.io": "^2.0.3",
+    "sqlite3": "^3.1.13",
     "swagger-ui-express": "^2.0.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "faker": "^4.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kissarat/lanote.git"

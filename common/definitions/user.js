@@ -1,8 +1,12 @@
 module.exports = {
   type: 'object',
   properties: {
+    id: {
+      type: 'integer',
+      primaryKey: true
+    },
     nick: {
-      type: {$ref: '#/definitions/nick'}
+      $ref: '#/definitions/nick'
     },
     email: {
       type: 'string',
